@@ -37,6 +37,109 @@
   }
 }
 
+/* Study */
+.studyDiv {
+  border: 1px solid #ffad69;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin: 16px auto;
+  font-size: 16px;
+  max-width: 500px;
+  background-color: #202020;
+  color: #202020;
+}
+
+.studyDiv:hover {
+  color: #fff;
+}
+.studyAnswer:hover {
+  color: #fff;
+}
+
+p {
+  display: flex;
+  justify-content: center;
+}
+
+.nextCard {
+  border: 1px solid #ffad69;
+  color: #fff;
+  background-color: #202020;
+  font-weight: bold;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  display: inline-flex;
+  padding: 10px 20px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.lastCard {
+  border: 1px solid #ffad69;
+  color: #fff;
+  background-color: #202020;
+  font-weight: bold;
+  border-radius: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  display: inline-flex;
+  padding: 10px 20px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.search {
+  border: 1px solid #ffad69;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 20px;
+  font-size: 14px;
+  background-color: #202020;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  margin: 20px auto;
+  box-sizing: border-box;
+}
+
+.nextCard:hover {
+  background-color: #ffad69;
+  color: #202020;
+  cursor: pointer;
+}
+
+.lastCard:hover {
+  background-color: #ffad69;
+  color: #202020;
+  cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+}
+.studyQuestion {
+  font-weight: bold;
+  color: #61dafb;
+  margin-bottom: 12px;
+}
+
+.id {
+  font-weight: bold;
+  color: #ffad69;
+  margin-bottom: 10px;
+  display: flex;
+  display: flex;
+  justify-content: center;
+  margin-left: 85%;
+}
+
 /* Header */
 
 header {
@@ -50,15 +153,30 @@ header {
 
 h1 {
   color: #ffad69;
+  display: flex;
+  justify-content: center;
 }
 
 h2 {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   color: white;
+  border: 5px;
+  border-color: #78e0dc;
 }
 
 h3 {
   color: white;
+  font-size: medium;
+  font-weight: 500;
+  align-items: center;
+  justify-content: center;
+}
+
+h4 {
+  color: #fff;
+  font-style: italic;
+  display: flex;
+  justify-content: center;
 }
 
 h5 {
@@ -69,8 +187,12 @@ h5 {
   justify-content: center;
 }
 
+.noCard {
+  color: #fff;
+}
+
 .homePage {
-  padding: 5%;
+  padding: 10%;
 }
 
 .homeButtons {
@@ -93,7 +215,7 @@ body {
 /* Footer */
 footer {
   background-image: linear-gradient(#202020, #78e0dc);
-  color: white;
+  color: fff;
   display: flex;
   align-items: flex-end;
   flex-direction: row;

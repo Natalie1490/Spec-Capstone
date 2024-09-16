@@ -1,30 +1,32 @@
 const express = require("express");
 const cors = require("cors");
-const Sequelize = require("sequelize");
-const { QueryTypes } = require("sequelize");
+// const Sequelize = require("sequelize");
+const { sequelize } = require("./util/database");
+const { StudyCard } = require("./models/studycard");
+const { seedCards } = require("./util/seed");
 require("dotenv").config();
 
 const app = express();
 app.use(express.json());
 app.use(cors());
-const PORT = 5001;
+
+const PORT = process.env.PORT || 5001; // Use environment port if available
 
 const { DATABASE_URL } = process.env;
 
-const sequelize = new Sequelize(DATABASE_URL, {
-  dialect: "postgres",
-  dialectOptions: {
-    ssl: {
-      rejectUnauthorized: false,
-    },
-  },
+if (!DATABASE_URL) {
+  console.error("DATABASE_URL is not defined in the environment variables.");
+  process.exit(1);
+}
+
+sequelize.sync().then(() => {
+  app.listen(PORT, () => console.log(`Running on Port ${PORT}`));
 });
 
-app.listen(PORT, () => console.log(`Running on Port ${PORT}`));
+app.post("/seed", seedCards);
 
-app.get("/studyCards", (req, res) => {
-  sequelize.query("SELECT * FROM study_cards;").then((dbRes) => {
-    console.log(dbRes);
-    res.send(dbRes[0]);
-  });
+app.get("/studyCards", async (req, res) => {
+  const studyCards = await StudyCard.findAll();
+
+  res.send(studyCards);
 });

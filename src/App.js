@@ -14,7 +14,7 @@ function App() {
       <Header />
       <Routes>
         <Route index element={<Home />} />
-        <Route path="/profile" element={<Profile />} />
+        {/* <Route path="/profile" element={<Profile />} /> */}
         {/* <Route path="/quiz" element={<Quiz />} /> */}
         <Route path="/study" element={<Study />} />
       </Routes>

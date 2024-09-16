@@ -1,19 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
+
   return (
     <header>
-      <Link to="/" style={{ textDecoration: "none" }}>
-        <h2>License Lab</h2>
-      </Link>
+      <h2 onClick={() => navigate("/")}>License Lab</h2>
       <nav className="navbar">
-        <Link to="Home" style={{ textDecoration: "none" }}>
-          <h5>Quiz</h5>
-        </Link>
-        <Link to="Study" style={{ textDecoration: "none" }}>
-          <h5>Study</h5>
-        </Link>
+        {/* <h5 onClick={() => navigate("/Quiz")}>Quiz</h5> */}
+
+        <h5 onClick={() => navigate("/Study")}>Study</h5>
       </nav>
     </header>
   );
